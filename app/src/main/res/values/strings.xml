@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Football Counter</string>
+    <string name="foul">Foul</string>
+</resources>

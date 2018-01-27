@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dell.footballcounter.MainActivity"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/back">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:countDown="true"
+                android:text="Time"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/demarcate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="-"
+                android:textColor="#fff"
+                android:textSize="70sp" />
+
+            <TextView
+                android:id="@+id/goalManU_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toStartOf="@id/demarcate"
+                android:fontFamily="sans-serif-condensed"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="70sp" />
+
+            <TextView
+                android:id="@+id/goalRealMadrid_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/demarcate"
+                android:fontFamily="sans-serif-condensed"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="70sp" />
+
+
+            <ImageView
+                android:id="@+id/manchester_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Man u logo"
+                android:src="@drawable/manchester_united" />
+
+
+            <ImageView
+                android:id="@+id/realMadrid_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/real_madrid" />
+
+            <TextView
+                android:id="@+id/half"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="1st half"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stat_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="#3949ab"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="Match Stats"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollIndicators="right"
+            android:scrollbarStyle="insideOverlay">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:background="#3949ab">
+
+                <LinearLayout
+                    android:id="@+id/onShortPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/onManU_txt"
+                        style="@style/textStyle2" />
+
+                    <TextView
+                        android:id="@+id/onshortsTxt"
+                        style="@style/textStyle3"
+                        android:text="Shorts On Target" />
+
+                    <TextView
+                        android:id="@+id/onReal_txt"
+                        style="@style/textStyle" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/offShortsPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/onShortPanel"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/offManU_txt"
+                        style="@style/textStyle2" />
+                    />
+
+                    <TextView
+                        android:id="@+id/offshortsTxt"
+                        style="@style/textStyle3"
+                        android:text="Shorts Off Target" />
+
+
+                    <TextView
+                        android:id="@+id/offReal_txt"
+                        style="@style/textStyle" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cornerKicksPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/offShortsPanel"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cornerManU_txt"
+                        style="@style/textStyle2" />
+
+                    <TextView
+                        android:id="@+id/cornerTxt"
+                        style="@style/textStyle3"
+                        android:text="Corner Kicks" />
+
+                    <TextView
+                        android:id="@+id/cornerRealMadrid_txt"
+                        style="@style/textStyle" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/offSidePanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cornerKicksPanel"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/offsideManU"
+                        style="@style/textStyle2" />
+
+                    <TextView
+                        android:id="@+id/offsideTxt"
+                        style="@style/textStyle3"
+                        android:text="Offsides" />
+
+                    <TextView
+                        android:id="@+id/offsideRealMadrid"
+                        style="@style/textStyle" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/foulPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/offSidePanel"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/foulManU"
+                        style="@style/textStyle2" />
+
+                    <TextView
+                        android:id="@+id/foulTxt"
+                        style="@style/textStyle3"
+                        android:text="Foul" />
+
+
+                    <TextView
+                        android:id="@+id/foulRealMadrid"
+                        style="@style/textStyle" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/yellowCardPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/foulPanel"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/yellowCardManU"
+                        style="@style/textStyle2" />
+
+                    <TextView
+                        android:id="@+id/yellowCardTxt"
+                        style="@style/textStyle3"
+                        android:text="Yellow Cards" />
+
+
+                    <TextView
+                        android:id="@+id/yellowCardRealMadrid"
+                        style="@style/textStyle" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/redCardPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/yellowCardPanel"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/redCardManU"
+                        style="@style/textStyle2" />
+
+                    <TextView
+                        android:id="@+id/redCardTxt"
+                        style="@style/textStyle3"
+                        android:text="Red Cards" />
+
+
+                    <TextView
+                        android:id="@+id/redCardRealMadrid"
+                        style="@style/textStyle" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/goalKickPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/redCardPanel"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/goalKickManU"
+                        style="@style/textStyle2" />
+
+                    <TextView
+                        android:id="@+id/goalKickTxt"
+                        style="@style/textStyle3"
+                        android:text="Goal Kicks" />
+
+                    <TextView
+                        android:id="@+id/goalKickRealMadrid"
+                        style="@style/textStyle" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.8"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/control_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="#3949ab"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="Controls"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/man"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp">
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/goalManu_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Goal" />
+
+                        <Button
+                            android:id="@+id/offsideManU_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Offside"
+
+                            />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/foulManU_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Foul"
+
+
+                            />
+
+                        <Button
+                            android:id="@+id/cornerManU_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Corner" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/redCardManU_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Red" />
+
+                        <Button
+                            android:id="@+id/yellowCardManU_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Yellow" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/onManU_Btn"
+                            style="@style/buttonStyle"
+                            android:text="On Target" />
+
+                        <Button
+                            android:id="@+id/offManU_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Off Target" />
+
+                    </TableRow>
+
+                    <TableRow android:layout_marginStart="40dp">
+
+                        <Button
+                            android:id="@+id/goalKickManU_Btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="2dp"
+                            android:background="#FF4081"
+                            android:text="Goal Kick"
+                            android:textAllCaps="false"
+                            android:textColor="#fff" />
+
+                    </TableRow>
+                </TableLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+
+                android:background="@android:color/darker_gray">
+
+            </View>
+
+            <LinearLayout
+                android:id="@+id/real"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="5dp">
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/goalRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Goal" />
+
+                        <Button
+                            android:id="@+id/offsideRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Offside" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/foulRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Foul" />
+
+                        <Button
+                            android:id="@+id/cornerRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Corner" />
+
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/redCardRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Red" />
+
+                        <Button
+                            android:id="@+id/yellowCardRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Yellow" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <Button
+                            android:id="@+id/onRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="On Target" />
+
+                        <Button
+                            android:id="@+id/offRealMadrid_Btn"
+                            style="@style/buttonStyle"
+                            android:text="Off Target" />
+                    </TableRow>
+
+                    <TableRow android:layout_marginStart="40dp">
+
+                        <Button
+                            android:id="@+id/goalKickRealMadrid_Btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="2dp"
+                            android:background="#FF4081"
+                            android:text="Goal Kick"
+                            android:textAllCaps="false"
+                            android:textColor="#fff" />
+                    </TableRow>
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#3949ab">
+
+            <!--<Button-->
+            <!--android:id="@+id/reset_Btn"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_margin="2dp"-->
+            <!--android:padding="5dp"-->
+            <!--android:background="#FF4081"-->
+            <!--android:text="Reset"-->
+            <!--android:textSize="15sp"-->
+
+            <!--android:textAllCaps="false"-->
+            <!--android:textColor="#fff" />-->
+
+            <Button
+                android:id="@+id/start_first"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_centerInParent="false"
+                android:layout_marginBottom="2dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="2dp"
+                android:background="#FF4081"
+                android:onClick="start"
+                android:padding="5dp"
+                android:text="Start 1st Half"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/start_second"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="2dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginTop="2dp"
+                android:background="#FF4081"
+                android:enabled="false"
+                android:onClick="second"
+                android:padding="5dp"
+                android:text="Start 2nd Half"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
